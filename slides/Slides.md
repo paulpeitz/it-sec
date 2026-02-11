@@ -19,13 +19,13 @@ theme: custom-gaia
 * Autorisierung (2): Single Sign-On (SSO)
 
 ----
-
+![bg opacity](img/chain.jpg)
 ## Identity & Access Management (IAM)
 
 IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherstellt, dass die richtigen Entitäten (Benutzer oder Systeme) den richtigen Zugriff auf die richtigen Ressourcen (Daten, Anwendungen) zur richtigen Zeit und aus den richtigen Gründen erhalten.
 
 ---
-
+![bg opacity](img/chain.jpg)
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
 * Authentifizierung (AuthN): Wer sind Sie?
@@ -40,13 +40,13 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   * Analogie: Eine Hausordnung
 
 ---
-
+![bg opacity](img/chain.jpg)
 # Authentifizierung
 
 ## Wer sind Sie?
 
 ---
-
+![bg opacity](img/chain.jpg)
 ## Grundlagen der Authentifizierung
 
 * Die drei Faktoren der Authentifizierung:
@@ -55,7 +55,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
 
 ---
-
+![bg opacity](img/passwort.jpg)
 ## Wissen - Passwörter
 
 * Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
@@ -63,7 +63,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 * Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
 
 ---
-
+![bg opacity](img/passwort.jpg)
 ## Passwörter - Menschliche Schwächen 1
 
 * Geringe Entropie (Schwache Passwörter)
