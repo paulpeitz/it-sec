@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: custom-gaia
-footer: ![w:150](https://marp.app/assets/marp.svg)
+footer: ![w:150](img/dhbw-ka.svg)
 ---
 ![bg opacity:.1](img/chain.jpg)
 # Identity and Access Management (IAM)
