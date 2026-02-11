@@ -4,22 +4,20 @@ theme: custom-default
 footer: 'https://example.com'
 ---
 
-# 1. Sample Presentation
-![bg right](https://picsum.photos/800/600)
+# IT-Sicherheit und Datenschutz
 
 ---
 
 <!-- Speaker Notes -->
-## 2. Speaker nots and Lists
+## Agenda
 
 - Item 1
 - Item 2
 - Item 3
-<!-- Can have multiple on a slide -->
 
 ---
 
-## 3. Speaker notes and images
+## Authentifizierung
 <!-- Can also do a multiline
 comment that will show in notes -->
 
