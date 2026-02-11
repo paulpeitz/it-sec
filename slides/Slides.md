@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: custom
+theme: custom-gaia
 ---
 ![bg opacity](img/chain.jpg)
 # Identity and Access Management (IAM)
