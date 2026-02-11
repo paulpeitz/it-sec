@@ -9,14 +9,14 @@ theme: custom-gaia
 
 # Agenda
 
-* Identity & Access Management (IAM)
-* Grundlagen: Authentifizierung vs. Autorisierung
-* Authentifizierung (1): Passwörter und ihre Schwächen
-* Authentifizierung (2): 2-Faktor-Authentifizierung (2FA)
-* Authentifizierung (3): FIDO2
-* Passkeys statt Passwörter
-* Autorisierung (1): Berechtigungsmanagement
-* Autorisierung (2): Single Sign-On (SSO)
+- Identity & Access Management (IAM)
+- Grundlagen: Authentifizierung vs. Autorisierung
+- Authentifizierung (1): Passwörter und ihre Schwächen
+- Authentifizierung (2): 2-Faktor-Authentifizierung (2FA)
+- Authentifizierung (3): FIDO2
+- Passkeys statt Passwörter
+- Autorisierung (1): Berechtigungsmanagement
+- Autorisierung (2): Single Sign-On (SSO)
 
 ----
 
@@ -28,20 +28,20 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
-* Authentifizierung (AuthN): Wer sind Sie?
-  * Der Prozess der Überprüfung einer Identität.
-  * Der Benutzer beweist, dass er derjenige ist, für den er sich ausgibt.
-  * Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
+- Authentifizierung (AuthN): Wer sind Sie?
+  - Der Prozess der Überprüfung einer Identität.
+  - Der Benutzer beweist, dass er derjenige ist, für den er sich ausgibt.
+  - Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
 
 ---
 
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
-* Autorisierung (AuthZ): Was dürfen Sie tun?
-  * Der Prozess der Gewährung oder Verweigerung von Rechten.
-  * Dieser Schritt erfolgt nach einer erfolgreichen Authentifizierung.
-  * Definiert, auf welche Ressourcen (Dateien, API-Endpunkte, Admin-Dashboards) der authentifizierte Benutzer zugreifen darf.
-  * Analogie: Eine Hausordnung
+- Autorisierung (AuthZ): Was dürfen Sie tun?
+  - Der Prozess der Gewährung oder Verweigerung von Rechten.
+  - Dieser Schritt erfolgt nach einer erfolgreichen Authentifizierung.
+  - Definiert, auf welche Ressourcen (Dateien, API-Endpunkte, Admin-Dashboards) der authentifizierte Benutzer zugreifen darf.
+  - Analogie: Eine Hausordnung
 
 ---
 
@@ -54,7 +54,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ## Grundlagen der Authentifizierung
 
-* Die drei Faktoren der Authentifizierung:
+- Die drei Faktoren der Authentifizierung:
   * Wissen: Etwas, das Sie wissen (Passwort, PIN).
   * Besitz: Etwas, das Sie haben (Smartphone, USB-Token, Smartcard).
   * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
@@ -63,23 +63,23 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ## Wissen - Passwörter
 
-* Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
-* Das Passwort ist ein Single Point of Failure, der auf Geheimhaltung basiert. 
-* Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
+- Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
+- Das Passwort ist ein Single Point of Failure, der auf Geheimhaltung basiert. 
+- Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
 
 ---
 
 ## Passwörter - Menschliche Schwächen 1
 
 * Geringe Entropie (Schwache Passwörter)
-  * Gängige Wörter ("Passwort", "Sonne")
-  * Sequenzen ("123456", "qwertz")
-  * Persönliche Daten (Geburtstage, Namen von Kindern oder Haustieren)
-  * Keine/Wenige Sonderzeichen
+  - Gängige Wörter ("Passwort", "Sonne")
+  - Sequenzen ("123456", "qwertz")
+  - Persönliche Daten (Geburtstage, Namen von Kindern oder Haustieren)
+  - Keine/Wenige Sonderzeichen
 
 * Passwort-Wiederverwendung (Password Reuse)
-  * Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
-  * Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
+  - Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
+  - Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
 
 
 ---
