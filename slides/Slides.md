@@ -90,13 +90,9 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ---
 
-## 8. Icons
+## Mathe
 
-<i class="fa-brands fa-twitter"></i> Twitter: 
-<i class="fa-brands fa-mastodon"></i> Mastodon: 
-<i class="fa-brands fa-linkedin"></i> LinkedIn: 
-<i class="fa fa-window-maximize"></i> Blog: 
-<i class="fa-brands fa-github"></i> GitHub: 
+Konzept: Zwei Parteien (Alice und Bob) einigen sich öffentlich auf eine Basis $g$ und einen Modulus $p$. Beide wählen je eine geheime Zahl ($a$ bzw. $b$) und berechnen ihre öffentlichen Werte ($A = g^a \pmod p$ bzw. $B = g^b \pmod p$). Sie tauschen $A$ und $B$ aus. Alice berechnet $K = B^a \pmod p$ und Bob berechnet $K = A^b \pmod p$. Das Ergebnis $K$ ist für beide dasselbe und der geheime gemeinsame Schlüssel, selbst wenn ein Lauscher $A$, $B$, $g$ und $p$ kennt.
 
 ---
 
