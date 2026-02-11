@@ -1,74 +1,81 @@
 ---
 marp: true
 theme: custom-default
-footer: 'https://example.com'
 ---
-
-# IT-Sicherheit und Datenschutz
-
----
-
-<!-- Speaker Notes -->
-## Agenda
-
-- Item 1
-- Item 2
-- Item 3
-
----
-
-## Authentifizierung
-<!-- Can also do a multiline
-comment that will show in notes -->
-
-![Image](https://picsum.photos/800/600)
-
----
-
-## 4. Centered images
-
-You can center images
-
-![center](https://picsum.photos/800/600)
-
----
-
-## 5. Slide 4
-
-> This is a quote.
-
----
-
-## 6. Tables
-
-| Column 1 | Column 2 |
-| -------- | -------- |
-| Item 1   | Item 2   |
-| Item 3   | Item 4   |
-
----
-
 ![bg opacity](https://picsum.photos/800/600?image=53)
-## 7. Columns
+# Identity and Access Management (IAM)
 
-<div class="columns">
-<div>
+---
 
-## Left
+# Agenda
 
-- 1
-- 2
+* Identity & Access Management (IAM)
+* Grundlagen: Authentifizierung vs. Autorisierung
+* Authentifizierung (1): Passwörter und ihre Schwächen
+* Authentifizierung (2): 2-Faktor-Authentifizierung (2FA)
+* Authentifizierung (3): FIDO2
+* Passkeys statt Passwörter
+* Autorisierung (1): Berechtigungsmanagement
+* Autorisierung (2): Single Sign-On (SSO)
 
-</div>
-<div>
+----
 
-## Right
+## Identity & Access Management (IAM)
 
-- 3
-- 4
+IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherstellt, dass die richtigen Entitäten (Benutzer oder Systeme) den richtigen Zugriff auf die richtigen Ressourcen (Daten, Anwendungen) zur richtigen Zeit und aus den richtigen Gründen erhalten.
 
-</div>
-</div>
+---
+
+## Grundlagen: Authentifizierung vs. Autorisierung
+
+* Authentifizierung (AuthN): Wer sind Sie?
+  * Der Prozess der Überprüfung einer Identität.
+  * Der Benutzer beweist, dass er derjenige ist, für den er sich ausgibt.
+  * Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
+
+* Autorisierung (AuthZ): Was dürfen Sie tun?
+  * Der Prozess der Gewährung oder Verweigerung von Rechten.
+  * Dieser Schritt erfolgt nach einer erfolgreichen Authentifizierung.
+  * Definiert, auf welche Ressourcen (Dateien, API-Endpunkte, Admin-Dashboards) der authentifizierte Benutzer zugreifen darf.
+  * Analogie: Nachdem Sie an der Tür identifiziert wurden, gibt Ihnen die "Hausordnung" (Autorisierung) das Recht, das Wohnzimmer zu betreten, aber nicht das Schlafzimmer.
+
+---
+
+# Authentifizierung
+
+## Wer sind Sie?
+
+---
+
+## Grundlagen der Authentifizierung
+
+* Die drei Faktoren der Authentifizierung:
+ * Wissen: Etwas, das Sie wissen (Passwort, PIN).
+ * Besitz: Etwas, das Sie haben (Smartphone, USB-Token, Smartcard).
+ * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
+
+---
+
+## Wissen - Passwörter
+
+* Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
+* Das Passwort ist ein Single Point of Failure, der auf Geheimhaltung basiert. 
+* Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
+
+---
+
+## Passwörter - Menschliche Schwächen 1
+
+* Geringe Entropie (Schwache Passwörter)
+  * Gängige Wörter ("Passwort", "Sonne")
+  * Sequenzen ("123456", "qwertz")
+  * Persönliche Daten (Geburtstage, Namen von Kindern oder Haustieren)
+  * Keine/Wenige Sonderzeichen
+
+* Passwort-Wiederverwendung (Password Reuse)
+  * Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
+  * Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
+
 
 ---
 
