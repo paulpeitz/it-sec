@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: custom-default
+theme: custom-gaia.css
 ---
 ![bg opacity](https://picsum.photos/800/600?image=53)
 # Identity and Access Management (IAM)
@@ -50,9 +50,9 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 ## Grundlagen der Authentifizierung
 
 * Die drei Faktoren der Authentifizierung:
- * Wissen: Etwas, das Sie wissen (Passwort, PIN).
- * Besitz: Etwas, das Sie haben (Smartphone, USB-Token, Smartcard).
- * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
+  * Wissen: Etwas, das Sie wissen (Passwort, PIN).
+  * Besitz: Etwas, das Sie haben (Smartphone, USB-Token, Smartcard).
+  * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
 
 ---
 
