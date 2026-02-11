@@ -6,6 +6,8 @@ footer: ![w:250](img/dhbw-ka.svg)
 ![bg opacity:.1](img/chain.jpg)
 # Identity and Access Management (IAM)
 
+## Authentifizierung und Autorisierung
+
 ---
 ![bg opacity:.1](img/chain.jpg)
 # Agenda
@@ -70,6 +72,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 - Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
 
 ---
+
 ![bg opacity:.1](img/passwort.jpg)
 ## Passwörter - Menschliche Schwächen
 
@@ -80,23 +83,68 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   - Keine/Wenige Sonderzeichen
 
 ---
+
 ![bg opacity:.1](img/passwort.jpg)
 ## Passwörter - Menschliche Schwächen
 
 - Passwort-Wiederverwendung (Password Reuse)
   - Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
   - Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
+  - 
+---
+
+![bg opacity:.1](img/passwort.jpg)
+## Passwörter - Menschliche Schwächen
+
+- Unsichere Aufbewahrung: Das "Wissen" wird oft physisch oder digital unsicher gespeichert – sei es auf einem Post-it am Monitor, in einer unverschlüsselten Textdatei (passwoerter.txt) oder im Browser-Speicher ohne Master-Passwort.
+- Mangelndes Bewusstsein für Social Engineering: Benutzer sind anfällig für Phishing-Angriffe, bei denen sie dazu verleitet werden, ihr Passwort auf einer gefälschten Webseite einzugeben.
+---
+ 
+## Passwort-Rotation (Änderungsfrequenz)
+
+Wie oft muss ein Passwort geändert werde?
+
+- Ursprüngliche Idee: Falls ein Passwort kompromittiert wurde (z.B. durch Abhören im Netzwerk oder einen Trojaner), soll die Gültigkeitsdauer des gestohlenen Passworts begrenzt werden.
+- Warum diese Regel heute oft kontraproduktiv ist:
+  - Benutzer, die zur häufigen Änderung gezwungen werden, neigen dazu, minimale Änderungen vorzunehmen (zB. P@ssw0rt_01 -> P@ssw0rt_02).
+  - Die kognitive Last führt zu schwächeren, leichter zu merkenden (und damit leichter zu erratenden) Passwörtern.
+  - Benutzer schreiben Passwörter auf (z.B. Post-it am Monitor).
+
+---
+ 
+## Passwort-Rotation (Änderungsfrequenz)
+
+Moderne Empfehlung (NIST, BSI):
+
+- Keine erzwungene, periodische Rotation für Benutzerpasswörter.
+- Passwörter sollten unbegrenzt gültig sein, solange sie stark sind.
+- Änderungspflicht nur bei Anzeichen einer Kompromittierung (z.B. verdächtige Anmeldeversuche, Auftauchen in einem Datenleck).
 
 
 ---
 
-## Mathe
+# Passwortregeln (Komplexität)
 
-Konzept: Zwei Parteien (Alice und Bob) einigen sich öffentlich auf eine Basis $g$ und einen Modulus $p$. Beide wählen je eine geheime Zahl ($a$ bzw. $b$) und berechnen ihre öffentlichen Werte ($A = g^a \pmod p$ bzw. $B = g^b \pmod p$). Sie tauschen $A$ und $B$ aus. Alice berechnet $K = B^a \pmod p$ und Bob berechnet $K = A^b \pmod p$. Das Ergebnis $K$ ist für beide dasselbe und der geheime gemeinsame Schlüssel, selbst wenn ein Lauscher $A$, $B$, $g$ und $p$ kennt.
+Das Ziel: Erhöhung der Entropie und Schutz vor Angriffen
 
+- Traditionelle Komplexitätsanforderungen:
+  - Mindestlänge (oft 8-12 Zeichen)
+  - Mindestens ein Großbuchstabe (A-Z)
+  - Mindestens ein Kleinbuchstabe (a-z)
+  - Mindestens eine Ziffer (0-9)
+  - Mindestens ein Sonderzeichen (z.B. !§$%&?)
+  - 
 ---
 
-# 9. <!--fit--> Large Text
+# Passwortregeln (Komplexität)
+
+Probleme & Moderne Sichtweise (NIST SP 800-63B):
+
+- Problem: Komplexe Regeln führen oft zu vorhersehbaren Mustern. Ein Benutzer wählt Sommer2024! statt Sommer2023!. Dies ist für Angreifer leicht auszunutzen ("Pattern-based attacks").
+- Problem: Menschen können sich komplexe, zufällige Passwörter schlecht merken.
+- Moderne Priorität: Länge ist wichtiger als Komplexität. Eine Passphrase (z.B. vier-schoene-baeume-im-garten) ist oft sicherer und leichter zu merken als P@ssw0rt1!.
+- Moderne Anforderung: Statt erzwungener Sonderzeichen ist die Prüfung gegen "Blocklists" (bekannte Passwörter, kompromittierte Passwörter, kontextspezifische Wörter wie der Name des Dienstes) entscheidend.
+
 
 ---
 
