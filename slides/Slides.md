@@ -61,6 +61,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ---
 
+![bg opacity:.1](img/passwort.jpg)
 ## Wissen - Passwörter
 
 - Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
@@ -69,15 +70,19 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ---
 
-## Passwörter - Menschliche Schwächen 1
+## Passwörter - Menschliche Schwächen
 
-* Geringe Entropie (Schwache Passwörter)
+- Geringe Entropie (Schwache Passwörter)
   - Gängige Wörter ("Passwort", "Sonne")
   - Sequenzen ("123456", "qwertz")
   - Persönliche Daten (Geburtstage, Namen von Kindern oder Haustieren)
   - Keine/Wenige Sonderzeichen
 
-* Passwort-Wiederverwendung (Password Reuse)
+---
+
+## Passwörter - Menschliche Schwächen
+
+- Passwort-Wiederverwendung (Password Reuse)
   - Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
   - Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
 
