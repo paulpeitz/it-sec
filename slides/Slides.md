@@ -2,7 +2,7 @@
 marp: true
 theme: custom-uncover.css
 ---
-![bg opacity](https://picsum.photos/800/600?image=53)
+![bg opacity](chain.jpg)
 # Identity and Access Management (IAM)
 
 ---
