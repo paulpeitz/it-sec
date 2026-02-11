@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: custom-gaia.css
+theme: custom-uncover.css
 ---
 ![bg opacity](https://picsum.photos/800/600?image=53)
 # Identity and Access Management (IAM)
