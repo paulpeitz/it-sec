@@ -37,7 +37,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   * Der Prozess der Gewährung oder Verweigerung von Rechten.
   * Dieser Schritt erfolgt nach einer erfolgreichen Authentifizierung.
   * Definiert, auf welche Ressourcen (Dateien, API-Endpunkte, Admin-Dashboards) der authentifizierte Benutzer zugreifen darf.
-  * Analogie: Nachdem Sie an der Tür identifiziert wurden, gibt Ihnen die "Hausordnung" (Autorisierung) das Recht, das Wohnzimmer zu betreten, aber nicht das Schlafzimmer.
+  * Analogie: Eine Hausordnung
 
 ---
 
