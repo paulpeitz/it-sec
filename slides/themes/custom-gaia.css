@@ -7,3 +7,19 @@ section {
   /* Override default background */
   background: #fff;
 }
+
+<!-- footer: ![w:150](https://marp.app/assets/marp.svg) -->
+
+<style>
+footer {
+  /* Unset default placing inherited from the built-in theme */
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+
+  /* Place to right-bottom */
+  right: 20px;
+  bottom: 20px;
+}
+</style>
