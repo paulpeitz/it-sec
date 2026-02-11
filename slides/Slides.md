@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: themes/custom-uncover.css
+theme: custom.css
 ---
 ![bg opacity](img/chain.jpg)
 # Identity and Access Management (IAM)
