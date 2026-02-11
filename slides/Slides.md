@@ -99,7 +99,8 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 - Unsichere Aufbewahrung: Das "Wissen" wird oft physisch oder digital unsicher gespeichert – sei es auf einem Post-it am Monitor, in einer unverschlüsselten Textdatei (passwoerter.txt) oder im Browser-Speicher ohne Master-Passwort.
 - Mangelndes Bewusstsein für Social Engineering: Benutzer sind anfällig für Phishing-Angriffe, bei denen sie dazu verleitet werden, ihr Passwort auf einer gefälschten Webseite einzugeben.
 ---
- 
+
+![bg opacity:.1](img/passwort.jpg)
 ## Passwort-Rotation (Änderungsfrequenz)
 
 Wie oft muss ein Passwort geändert werde?
@@ -111,7 +112,8 @@ Wie oft muss ein Passwort geändert werde?
   - Benutzer schreiben Passwörter auf (z.B. Post-it am Monitor).
 
 ---
- 
+
+![bg opacity:.1](img/passwort.jpg)
 ## Passwort-Rotation (Änderungsfrequenz)
 
 Moderne Empfehlung (NIST, BSI):
@@ -123,6 +125,7 @@ Moderne Empfehlung (NIST, BSI):
 
 ---
 
+![bg opacity:.1](img/passwort.jpg)
 # Passwortregeln (Komplexität)
 
 Das Ziel: Erhöhung der Entropie und Schutz vor Angriffen
@@ -136,6 +139,7 @@ Das Ziel: Erhöhung der Entropie und Schutz vor Angriffen
   - 
 ---
 
+![bg opacity:.1](img/passwort.jpg)
 # Passwortregeln (Komplexität)
 
 Probleme & Moderne Sichtweise (NIST SP 800-63B):
