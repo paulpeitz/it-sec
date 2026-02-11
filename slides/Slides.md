@@ -90,7 +90,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 - Passwort-Wiederverwendung (Password Reuse)
   - Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
   - Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
-  - 
+    
 ---
 
 ![bg opacity:.1](img/passwort.jpg)
@@ -149,6 +149,57 @@ Probleme & Moderne Sichtweise (NIST SP 800-63B):
 - Moderne Priorität: Länge ist wichtiger als Komplexität. Eine Passphrase (z.B. vier-schoene-baeume-im-garten) ist oft sicherer und leichter zu merken als P@ssw0rt1!.
 - Moderne Anforderung: Statt erzwungener Sonderzeichen ist die Prüfung gegen "Blocklists" (bekannte Passwörter, kompromittierte Passwörter, kontextspezifische Wörter wie der Name des Dienstes) entscheidend.
 
+---
+
+![bg opacity:.1](img/passwort.jpg)
+# Passwort Manager
+
 
 ---
+
+![bg opacity:.1](img/passwort.jpg)
+# Passwörter - Implementierung
+
+---
+
+![bg opacity:.1](img/passwort.jpg)
+# Passwörter - Angriffe
+
+---
+
+![bg opacity:.1](img/smartcard.jpg)
+# Authentifizierung - Besitz
+
+---
+
+![bg opacity:.1](img/fingerprint.jpg)
+# Authentifizierung - Sein (Inhärenz)
+
+---
+
+![bg opacity:.1](img/fido2.jpg)
+# Multi Factor Authentification (MFA/2FA)
+
+---
+
+![bg opacity:.1](img/fido2.jpg)
+# Passkeys - Konzept
+
+Ein Passkey ist ein digitaler Anmeldeinformationstyp, der Passwörter ersetzt. Er basiert auf dem FIDO-Standard (Fast Identity Online).
+
+---
+
+![bg opacity:.1](img/fido2.jpg)
+# Passkeys - Konzept
+
+Ein Passkey besteht aus zwei Teilen:
+1. Öffentlicher Schlüssel:
+  - Wird auf der Website oder beim Dienst gespeichert.
+  - Ist öffentlich und nicht geheim.
+2. Privater Schlüssel:
+  - Wird sicher auf Ihrem persönlichen Gerät gespeichert (z.B. Smartphone, Computer, Sicherheitsschlüssel).
+  - Dieser Schlüssel verlässt niemals Ihr Gerät.
+
+Es gibt kein Geheimnis (wie ein Passwort), das gestohlen oder erraten werden kann.
+
 
