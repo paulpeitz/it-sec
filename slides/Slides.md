@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: custom-gaia
+theme: custom-uncover
 ---
 ![bg opacity](img/chain.jpg)
 # Identity and Access Management (IAM)
@@ -19,19 +19,23 @@ theme: custom-gaia
 * Autorisierung (2): Single Sign-On (SSO)
 
 ----
-![bg opacity](img/chain.jpg)
+
 ## Identity & Access Management (IAM)
 
 IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherstellt, dass die richtigen Entitäten (Benutzer oder Systeme) den richtigen Zugriff auf die richtigen Ressourcen (Daten, Anwendungen) zur richtigen Zeit und aus den richtigen Gründen erhalten.
 
 ---
-![bg opacity](img/chain.jpg)
+
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
 * Authentifizierung (AuthN): Wer sind Sie?
   * Der Prozess der Überprüfung einer Identität.
   * Der Benutzer beweist, dass er derjenige ist, für den er sich ausgibt.
   * Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
+
+---
+
+## Grundlagen: Authentifizierung vs. Autorisierung
 
 * Autorisierung (AuthZ): Was dürfen Sie tun?
   * Der Prozess der Gewährung oder Verweigerung von Rechten.
@@ -40,13 +44,14 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   * Analogie: Eine Hausordnung
 
 ---
+
 ![bg opacity](img/chain.jpg)
 # Authentifizierung
 
 ## Wer sind Sie?
 
 ---
-![bg opacity](img/chain.jpg)
+
 ## Grundlagen der Authentifizierung
 
 * Die drei Faktoren der Authentifizierung:
@@ -55,7 +60,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   * Sein (Inhärenz): Etwas, das Sie sind (Fingerabdruck, Gesichtsscan, Iris).
 
 ---
-![bg opacity](img/passwort.jpg)
+
 ## Wissen - Passwörter
 
 * Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
@@ -63,7 +68,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 * Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
 
 ---
-![bg opacity](img/passwort.jpg)
+
 ## Passwörter - Menschliche Schwächen 1
 
 * Geringe Entropie (Schwache Passwörter)
@@ -93,18 +98,3 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ---
 
-<!-- Needed for mermaid, can be anywhere in file except frontmatter -->
-<script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-  mermaid.initialize({ startOnLoad: true });
-</script>
-
-# 10. Mermaid
-
-<div class="mermaid">
-graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-</div>
