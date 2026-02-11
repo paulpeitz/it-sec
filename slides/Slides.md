@@ -7,7 +7,7 @@ footer: ![w:150](img/dhbw-ka.svg)
 # Identity and Access Management (IAM)
 
 ---
-
+![bg opacity:.1](img/chain.jpg)
 # Agenda
 
 - Identity & Access Management (IAM)
@@ -20,13 +20,13 @@ footer: ![w:150](img/dhbw-ka.svg)
 - Autorisierung (2): Single Sign-On (SSO)
 
 ----
-
+![bg opacity:.1](img/chain.jpg)
 ## Identity & Access Management (IAM)
 
 IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherstellt, dass die richtigen Entitäten (Benutzer oder Systeme) den richtigen Zugriff auf die richtigen Ressourcen (Daten, Anwendungen) zur richtigen Zeit und aus den richtigen Gründen erhalten.
 
 ---
-
+![bg opacity:.1](img/chain.jpg)
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
 - Authentifizierung (AuthN): Wer sind Sie?
@@ -35,7 +35,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   - Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
 
 ---
-
+![bg opacity:.1](img/chain.jpg)
 ## Grundlagen: Authentifizierung vs. Autorisierung
 
 - Autorisierung (AuthZ): Was dürfen Sie tun?
@@ -46,13 +46,13 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 
 ---
 
-![bg opacity](img/chain.jpg)
+![bg opacity:.1](img/chain.jpg)
 # Authentifizierung
 
 ## Wer sind Sie?
 
 ---
-
+![bg opacity:.1](img/chain.jpg)
 ## Grundlagen der Authentifizierung
 
 - Die drei Faktoren der Authentifizierung:
