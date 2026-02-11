@@ -70,7 +70,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
 - Sobald dieses Geheimnis – sei es durch Raten, Phishing oder Leaks – preisgegeben wird, ist die Authentifizierung gebrochen.
 
 ---
-
+![bg opacity:.1](img/passwort.jpg)
 ## Passwörter - Menschliche Schwächen
 
 - Geringe Entropie (Schwache Passwörter)
@@ -80,7 +80,7 @@ IAM ist das Framework aus Richtlinien, Prozessen und Technologien, das sicherste
   - Keine/Wenige Sonderzeichen
 
 ---
-
+![bg opacity:.1](img/passwort.jpg)
 ## Passwörter - Menschliche Schwächen
 
 - Passwort-Wiederverwendung (Password Reuse)
