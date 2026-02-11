@@ -8,9 +8,6 @@ section {
   background: #fff;
 }
 
-<!-- footer: ![w:150](https://marp.app/assets/marp.svg) -->
-
-<style>
 footer {
   /* Unset default placing inherited from the built-in theme */
   left: auto;
@@ -22,4 +19,3 @@ footer {
   right: 20px;
   bottom: 20px;
 }
-</style>
