@@ -29,12 +29,18 @@ jobs:
       - name: Copy images
         run: mkdir build && cp -R slides/img build/img && cp -R slides/themes build/themes
 
-      - name: Marp Build (README)
+      - name: Marp Build (IAM.md)
         uses: docker://marpteam/marp-cli:latest
         with:
-          args: --theme-set slides/themes -o build/IAM.html --html -- slides/IAM.md
+          args: --theme-set slides/themes -o build/iam.html --html -- slides/IAM.md
         env:
           MARP_USER: root:root
+      - name: Marp Build (Netzwerksicherheit.md)
+        uses: docker://marpteam/marp-cli:latest
+        with:
+          args: --theme-set slides/themes -o build/netzwerksicherheit.html --html -- slides/Netzwerksicherheit.md
+        env:
+          MARP_USER: root:root          
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
