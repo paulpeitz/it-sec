@@ -1,24 +1,24 @@
 ---
 marp: true
-theme: default
-footer: ![w:250](img/dhbw-ka.svg)
-
-style: |
-  h1 {
-    position: absolute;
-    top: 40px;
-    left: 75px;
-    right: 75px;
-  }
+theme: custom
+footer: ![w:280](img/dhbw-ka.svg)
 
 ---
-![bg opacity:.1](img/chain.jpg)
+
+<!-- _class: title -->
 # Identity and Access Management (IAM)
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 ## Authentifizierung und Autorisierung
 
 ---
-![bg opacity:.1](img/chain.jpg)
+<!-- _class: biglist -->
 # Agenda Identity & Access Management (IAM)
 
 - Grundlagen: Authentifizierung vs. Autorisierung
@@ -29,26 +29,48 @@ style: |
 - Single Sign-On (SSO)
 
 ----
-![bg opacity:.1](img/chain.jpg)
+
 # Identity & Access Management (IAM)
 
 IAM ist das Framework aus **Richtlinien, Prozessen und Technologien**, das sicherstellt, dass die **richtigen Entitäten** (Benutzer oder Systeme) den **richtigen Zugriff** auf die **richtigen Ressourcen** (Daten, Anwendungen) zur **richtigen Zeit** und aus den **richtigen Gründen** erhalten.
 
 ---
-![bg opacity:.1](img/chain.jpg)
+
+# Der Identity Lifecycle (IAM Prozesse)
+
+IAM ist nicht nur der Login, sondern der gesamte Lebenszyklus einer Identität im Unternehmen:
+
+- **Joiner (Onboarding):** Ein neuer Mitarbeiter kommt ins Unternehmen. Identität wird erstellt und initiale Rechte (Birthright-Provisioning) werden zugewiesen.
+- **Mover (Change):** Abteilungswechsel oder Beförderung. Rechte müssen angepasst werden (Vermeidung von "Privilege Creep" – das Ansammeln alter, unnötiger Rechte).
+- **Leaver (Offboarding):** Austritt aus dem Unternehmen. Der Zugriff muss **sofort** entzogen werden, um verwaiste Konten (Orphaned Accounts) zu verhindern.
+
+--- 
+
+
+# IAM als Kern von Zero Trust
+<!-- class: biglist -->
+In modernen Infrastrukturen gibt es kein sicheres "internes Netz" mehr.
+
+- **Leitsatz:** "Never trust, always verify."
+- **Verschiebung des Perimeters:** Früher schützte die Firewall das Netz. Heute ist die **Identität** der neue Sicherheitsumfang.
+- **Kontextuelle Prüfung:** Jeder Zugriff wird individuell geprüft (Wer? Welches Gerät? Welcher Ort? Welche Uhrzeit?), basierend auf Authentifizierung und Autorisierung.
+
+
+---
+
 # Grundlagen: Authentifizierung vs. Autorisierung
 
-- Authentifizierung (AuthN): Wer sind Sie?
+## Authentifizierung (AuthN): Wer sind Sie?
 
   - Der Prozess der Überprüfung einer Identität.
   - Der Benutzer beweist, dass er derjenige ist, für den er sich ausgibt.
   - Analogie: Das Vorzeigen Ihres Personalausweises an der Tür.
 
 ---
-![bg opacity:.1](img/chain.jpg)
+
 # Grundlagen: Authentifizierung vs. Autorisierung
 
-- Autorisierung (AuthZ): Was dürfen Sie tun?
+## Autorisierung (AuthZ): Was dürfen Sie tun?
 
   - Der Prozess der Gewährung oder Verweigerung von Rechten.
   - Dieser Schritt erfolgt nach einer erfolgreichen Authentifizierung.
@@ -56,17 +78,17 @@ IAM ist das Framework aus **Richtlinien, Prozessen und Technologien**, das siche
   - Analogie: Eine Hausordnung
 
 ---
+<!-- _class: chapter -->
 
-![bg opacity:.1](img/chain.jpg)
 # Authentifizierung
 
 ## Wer sind Sie?
 
 ---
-![bg opacity:.1](img/chain.jpg)
+
 # Grundlagen der Authentifizierung
 
-- Die drei Faktoren der Authentifizierung:
+## Die drei Faktoren der Authentifizierung:
 
   * **Wissen:** Etwas, das Sie wissen (Passwort, PIN).
   * **Besitz:** Etwas, das Sie haben (Smartphone, USB-Token, Smartcard).
@@ -74,7 +96,7 @@ IAM ist das Framework aus **Richtlinien, Prozessen und Technologien**, das siche
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Wissen - Passwörter
 
 - Passwörter sind der "klassische" Authentifizierungsfaktor: Wissen
@@ -84,7 +106,7 @@ IAM ist das Framework aus **Richtlinien, Prozessen und Technologien**, das siche
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwortstärke
 
 Das Maß für die Stärke eine Passworts ist die **Entropie**
@@ -97,7 +119,7 @@ Dabei ist $R$ der Vorrat an möglichen Zeichen, $L$ ist die Länge des Passworts
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwörter - Entropie
 
 <style scoped>
@@ -107,7 +129,7 @@ p { text-align: center; }
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwörter - Brute Force Angriffe
 
 <style scoped>
@@ -117,9 +139,8 @@ p { text-align: center; }
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
-# Passwörter - Geringe Entropie (Schwache Passwörter)
 
+# Passwörter - Geringe Entropie (Schwache Passwörter)
 
 - Gängige Wörter ("Passwort", "Sonne")
 - Sequenzen ("123456", "qwertz")
@@ -128,7 +149,7 @@ p { text-align: center; }
 
 --- 
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwortregeln (Komplexität)
 
 ### Das Ziel: Erhöhung der Entropie und Schutz vor Angriffen
@@ -142,10 +163,10 @@ p { text-align: center; }
   
 ---
 
-![bg opacity:.1](img/passwort.jpg)
-# Passwortregeln (Komplexität)
 
-Probleme & Moderne Sichtweise (NIST SP 800-63B):
+# Passwortregeln (Komplexität)
+<!-- _class: normal -->
+### Probleme & Moderne Sichtweise (NIST SP 800-63B):
 
 - **Problem:** Komplexe Regeln führen oft zu vorhersehbaren Mustern. Ein Benutzer wählt Sommer2024! statt Sommer2023!. Dies ist für Angreifer leicht auszunutzen ("Pattern-based attacks").
 - **Problem:** Menschen können sich komplexe, zufällige Passwörter schlecht merken.
@@ -155,27 +176,26 @@ Probleme & Moderne Sichtweise (NIST SP 800-63B):
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwörter - Menschliche Schwächen
+<!-- class: biglist -->
+## Passwort-Wiederverwendung (Password Reuse)
 
-- **Passwort-Wiederverwendung (Password Reuse)**
-
-  - Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
-  - Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
+- Benutzer verwenden dasselbe (oft schwache) Passwort für Dutzende verschiedene Dienste. 
+- Wird nur ein dieser Dienste kompromittiert, können Angreifer diese Anmeldedaten bei vielen anderen Diensten ausprobieren ("Credential Stuffing").
     
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwörter - Menschliche Schwächen
 
 - **Unsichere Aufbewahrung:** Das "Wissen" wird oft physisch oder digital unsicher gespeichert – sei es auf einem Post-it am Monitor, in einer unverschlüsselten Textdatei (passwoerter.txt) oder im Browser-Speicher ohne Master-Passwort.
 - **Mangelndes Bewusstsein für Social Engineering:** Benutzer sind anfällig für Phishing-Angriffe, bei denen sie dazu verleitet werden, ihr Passwort auf einer gefälschten Webseite einzugeben.
 ---
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwort-Rotation (Änderungsfrequenz)
-
-Wie oft muss ein Passwort geändert werde?
+<!-- _class: normal -->
+## Wie oft muss ein Passwort geändert werde?
 
 - **Ursprüngliche Idee:** Falls ein Passwort kompromittiert wurde (z.B. durch Abhören im Netzwerk oder einen Trojaner), soll die Gültigkeitsdauer des gestohlenen Passworts begrenzt werden.
 - **Warum diese Regel heute oft kontraproduktiv ist:**
@@ -184,11 +204,11 @@ Wie oft muss ein Passwort geändert werde?
   - Benutzer schreiben Passwörter auf (z.B. Post-it am Monitor).
 
 ---
+<!-- class: biglist -->
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwort-Rotation (Änderungsfrequenz)
 
-###  Moderne Empfehlung (NIST, BSI):
+##  Moderne Empfehlung (NIST, BSI):
 
 - Keine erzwungene, periodische Rotation für Benutzerpasswörter.
 - Passwörter sollten unbegrenzt gültig sein, solange sie stark sind.
@@ -196,51 +216,44 @@ Wie oft muss ein Passwort geändert werde?
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwort Manager
 
-
-Verschlüsselte Datenbank (ein "Tresor" oder "Vault") zur Speicherung von Zugangsdaten (Benutzernamen, Passwörter, API-Keys etc.).
+**Verschlüsselte Datenbank** (ein "Tresor" oder "Vault") zur Speicherung von Zugangsdaten (Benutzernamen, Passwörter, API-Keys etc.).
 
 Der Zugriff auf den Tresor wird durch ein einziges, sehr starkes Master-Passwort (und idealerweise durch 2-Faktor-Authentifizierung, 2FA) geschützt.
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwort Manager - Vorteile
-
+<!-- _class: normal -->
 - **Einzigartigkeit:** Sie ermöglichen es, für jeden einzelnen Dienst ein langes, komplexes und einzigartiges Passwort zu verwenden.
 - **Stärke:** Integrierte Generatoren erzeugen Passwörter mit hoher Entropie (z.B. k9§yE#vT!z$5rP@&mL).
 - **Lösung des Memorierproblems:** Benutzer müssen sich nur noch das Master-Passwort merken.
 - **Phishing-Schutz (teilweise):** Gute Manager binden Auto-Fill an die exakte URL. Sie füllen das Passwort für paypal.com nicht auf paypaI.com (mit großem 'i') ein.
 
-
 ---
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwort Manager - Nachteile
-
-- Single Point of Failure: Die Kompromittierung des Masters kompromittiert alles.
-- Vertrauen (Cloud vs. Lokal):
+<!-- _class: normal -->
+- **Single Point of Failure:** Die Kompromittierung des Masters kompromittiert alles.
+- **Vertrauen** (Cloud vs. Lokal):
   - Cloud-Manager (z.B. Bitwarden, 1Password): Synchronisation über Geräte hinweg. Vertrauen in das "Zero-Knowledge"-Prinzip (der Anbieter kann den Tresor nicht entschlüsseln, nur der Benutzer mit dem Master-Passwort).
   - Lokale Manager (z.B. KeePass): Die Datenbank-Datei (z.B. .kdbx) liegt in der Verantwortung des Benutzers (z.B. auf der Festplatte oder in einer privaten Cloud).
 
-
 ---
 
-![bg opacity:.1](img/passwort.jpg)
 # Passwörter - Implementierung
 
-Erster Ansatz: User/Passwort-Paare als Klartext in einer Datenbank speichern
+## Erster Ansatz: User/Passwort-Paare als Klartext in einer Datenbank speichern
 
-Problem: Jeder mit Zugriff auf die Tabelle (Admin/Angreifer) kann alle Passwörter lesen
+## Problem: Jeder mit Zugriff auf die Tabelle (Admin/Angreifer) kann alle Passwörter lesen
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwörter - Hashing
 
-Nächster Versuch - Nur Hashes von Passörtern speichern
+## Nächster Versuch - Nur **Hashes** von Passwörtern speichern
 
 **Vorteile:**
   - Nur User kennt das Passwort
@@ -251,7 +264,7 @@ Nächster Versuch - Nur Hashes von Passörtern speichern
   - Anfällig gegen Rainbow-Tables
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Rainbow Tables
 
 Problem von Hashes: Gleiches Passwort führt zu gleichem Hash
@@ -263,24 +276,24 @@ Problem von Hashes: Gleiches Passwort führt zu gleichem Hash
 
 ---
 
-![bg opacity:.1](img/passwort.jpg)
+
 # Passwort Salting
 
 Schutz gegen Rainbow Tables
 
-Ein pro User zufällig generierter String (Salt) wird an das Passwort gehängt
+Ein pro User **zufällig generierter String** (Salt) wird an das Passwort gehängt
 
 Trotz gleicher Passwörter entstehen unterschiedliche Hashes
 
 Salt kann als Klartext zum Passwort-Hash gespeichert werden
 
 ---
-![bg opacity:.1](img/smartcard.jpg)
+
 # Authentifizierung - Besitz
 
-Klassische Beispiele: Schlüssel, Ausweis
+**Klassische Beispiele:** Schlüssel, Ausweis
 
-Moderne Beispiele:
+**Moderne Beispiele:**
 - Hardware-Token: USB-Sicherheitsschlüssel (z. B. YubiKey).
 - Smartcards: Chipkarten mit Lesegerät.
 - Mobilgeräte: Smartphones für App-Bestätigungen oder SMS-Codes.
@@ -288,35 +301,35 @@ Moderne Beispiele:
 
 ---
 
-![bg opacity:.1](img/smartcard.jpg)
+
 # Besitz - Vorteile
 
-- Schutz vor Remote-Angriffen: Ein Hacker kann ein Passwort aus der Ferne stehlen, aber nur schwer einen physischen USB-Stick in Ihren Händen.
+- **Schutz vor Remote-Angriffen:** Ein Hacker kann ein Passwort aus der Ferne stehlen, aber nur schwer einen physischen USB-Stick in Ihren Händen.
 
-- Resistenz gegen Phishing: Moderne Token (FIDO2) kommunizieren direkt mit dem Browser und lassen sich nicht von Fake-Webseiten täuschen.
+- **Resistenz gegen Phishing:** Moderne Token (FIDO2) kommunizieren direkt mit dem Browser und lassen sich nicht von Fake-Webseiten täuschen.
 
-- Geringere kognitive Last: Nutzer müssen sich keine komplexen Zeichenfolgen merken; der Gegenstand ist der Schlüssel.
+- **Geringere kognitive Last:** Nutzer müssen sich keine komplexen Zeichenfolgen merken; der Gegenstand ist der Schlüssel.
 
-- Schwere Duplizierbarkeit: Hochwertige Sicherheitstoken sind so konzipiert, dass der interne Schlüssel nicht kopiert werden kann.
+- **Schwere Duplizierbarkeit:** Hochwertige Sicherheitstoken sind so konzipiert, dass der interne Schlüssel nicht kopiert werden kann.
 
 ---
 
-![bg opacity:.1](img/smartcard.jpg)
+
 # Besitz - Nachteile
 
-- Single Point of Failure (Verlust): Wird der Token verloren oder beschädigt, ist der Zugang gesperrt.
+- **Single Point of Failure (Verlust):** Wird der Token verloren oder beschädigt, ist der Zugang gesperrt.
 
-- Anschaffungskosten: Hardware-Lösungen verursachen Kosten für Kauf, Verteilung und Ersatzgeräte.
+- **Anschaffungskosten:** Hardware-Lösungen verursachen Kosten für Kauf, Verteilung und Ersatzgeräte.
 
-- Abhängigkeit von Hardware: Ein leerer Akku am Smartphone oder ein vergessener USB-Stick blockiert die Arbeit sofort.
+- **Abhängigkeit von Hardware:** Ein leerer Akku am Smartphone oder ein vergessener USB-Stick blockiert die Arbeit sofort.
 
-- Logistischer Aufwand: In Unternehmen müssen physische Token verwaltet, inventarisiert und bei Mitarbeiterwechseln zurückgefordert werden.
+- **Logistischer Aufwand:** In Unternehmen müssen physische Token verwaltet, inventarisiert und bei Mitarbeiterwechseln zurückgefordert werden.
 ---
+<!-- _class: biglist -->
 
-![bg opacity:.1](img/fingerprint.jpg)
 # Authentifizierung - Sein (Inhärenz)
 
-Die Identität wird durch biometrische Merkmale nachgewiesen. Diese sind einzigartig und (theoretisch) unveränderlich.
+Die Identität wird durch **biometrische Merkmale** nachgewiesen. Diese sind einzigartig und (theoretisch) unveränderlich.
 
 - Fingerabdruck
 - Gesicht
@@ -324,40 +337,40 @@ Die Identität wird durch biometrische Merkmale nachgewiesen. Diese sind einziga
 - Retina
 
 ---
+<!-- _class: biglist -->
 
-![bg opacity:.1](img/fingerprint.jpg)
 # Sein - Vorteile
 
-- Maximale Bequemlichkeit: Man kann seinen Finger oder sein Gesicht nicht zu Hause vergessen (im Gegensatz zu Token oder Passwörtern).
-- Keine Merklast: Es müssen keine komplexen Passwörter auswendig gelernt werden.
-- Einzigartigkeit: Biometrische Merkmale sind bei jedem Menschen individuell ausgeprägt.
-- Schnelligkeit: Ein Blick in die Kamera oder ein Scan des Daumens geht meist schneller als die Eingabe eines Codes.
+- **Maximale Bequemlichkeit:** Man kann seinen Finger oder sein Gesicht nicht zu Hause vergessen (im Gegensatz zu Token oder Passwörtern).
+- **Keine Merklast:** Es müssen keine komplexen Passwörter auswendig gelernt werden.
+- **Einzigartigkeit:** Biometrische Merkmale sind bei jedem Menschen individuell ausgeprägt.
+- **Schnelligkeit:** Ein Blick in die Kamera oder ein Scan des Daumens geht meist schneller als die Eingabe eines Codes.
 
 ---
 
-![bg opacity:.1](img/fingerprint.jpg)
-# Sein - Nachteile
 
-- Unwiderruflichkeit: Wenn biometrische Daten einmal gestohlen wurden (z. B. durch einen Datenbank-Hack), können sie nicht "geändert" werden.
-- Fehlerraten: 
+# Sein - Nachteile
+<!-- _class: normal -->
+- **Unwiderruflichkeit:** Wenn biometrische Daten einmal gestohlen wurden (z. B. durch einen Datenbank-Hack), können sie nicht "geändert" werden.
+- **Fehlerraten:** 
   - False Acceptance Rate (FAR): Jemand Fremdes wird fälschlich erkannt.
   - False Rejection Rate (FRR): Der echte Nutzer wird abgelehnt
-- Datenschutz & Privatsphäre: Biometrische Daten sind hochsensibel. Nutzer fürchten oft Überwachung oder Missbrauch durch zentrale Speicherung.
-- Überlistbarkeit (Spoofing): Hochwertige Fotos, 3D-Masken oder Deepfakes können einfache biometrische Systeme täuschen.
+- **Datenschutz & Privatsphäre:** Biometrische Daten sind hochsensibel. Nutzer fürchten oft Überwachung oder Missbrauch durch zentrale Speicherung.
+- **Überlistbarkeit (Spoofing):** Hochwertige Fotos, 3D-Masken oder Deepfakes können einfache biometrische Systeme täuschen.
 
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # Multi Factor Authentification (MFA/2FA)
 
-Das Herzstück der **2FA** ist die Kombination von **zwei unabhängigen Komponenten** aus **unterschiedlichen Kategorien.** 
+## Das Herzstück der **2FA** ist die Kombination von **zwei unabhängigen Komponenten** aus **unterschiedlichen Kategorien.** 
 
-Die Sicherheit steigt exponentiell, da ein Angreifer zwei völlig verschiedene Barrieren gleichzeitig überwinden muss.
+## Die Sicherheit steigt exponentiell, da ein Angreifer zwei völlig verschiedene Barrieren gleichzeitig überwinden muss.
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # 2FA - Time-based One-Time Password (TOTP)
 
 Erstellen von nur kurzzeitig gültigen PINs
@@ -370,12 +383,14 @@ Die Kernkomponenten:
 
 
 ---
-![bg opacity:.1](img/fido2.jpg)
+
+<!-- _class: chapter -->
+
 # Die Evolution der TAN-Verfahren
-### Sicherheit vs. Komfort im Online-Banking
+## Sicherheit vs. Komfort im Online-Banking
 
 ---
-![bg opacity:.1](img/fido2.jpg)
+<!-- class: normal -->
 # Die Ära der Papierlisten (iTAN)
 **Wie es funktionierte:**
 - Kunden erhielten eine gedruckte Liste mit durchnummerierten TANs.
@@ -387,7 +402,7 @@ Die Kernkomponenten:
 - **Verlust:** Wer den Zettel verlor, war aufgeschmissen.
 
 ---
-![bg opacity:.1](img/fido2.jpg)
+
 # Der mobile Weg: mTAN (SMS-TAN)
 **Wie es funktionierte:**
 - Die TAN wird per SMS auf das Handy geschickt.
@@ -399,7 +414,7 @@ Die Kernkomponenten:
 - **Netzabhängigkeit:** Funklöcher verhindern den Login.
 
 ---
-![bg opacity:.1](img/fido2.jpg)
+
 # Hardware-Sicherheit: chipTAN
 **Wie es funktionierte:**
 - Ein separates Lesegerät scannt einen **Flicker-Code** oder **QR-Code**.
@@ -412,7 +427,7 @@ Die Kernkomponenten:
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # Die moderne Ära: pushTAN & photoTAN
 
 **Wie es funktionierte:**
@@ -424,7 +439,7 @@ Die Kernkomponenten:
 - **Social Engineering:** Betrüger bringen Nutzer dazu, "versehentlich" eine Push-Nachricht zu bestätigen.
 
 ---
-![bg opacity:.1](img/fido2.jpg)
+
 
 # Vergleich der Verfahren
 
@@ -437,7 +452,7 @@ Die Kernkomponenten:
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # Warum wurde gewechselt? (PSD2)
 Die EU-Richtlinie **PSD2** hat das Ende für unsichere Verfahren besiegelt:
 
@@ -448,7 +463,7 @@ Die EU-Richtlinie **PSD2** hat das Ende für unsichere Verfahren besiegelt:
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # MFA - Mögliche Angriffe
 
 - **SIM-Swapping:** Angreifer erschleichen sich beim Provider eine Ersatz-SIM des Opfers.
@@ -458,8 +473,13 @@ Die EU-Richtlinie **PSD2** hat das Ende für unsichere Verfahren besiegelt:
 
 
 ---
+<!-- _class: chapter -->
+# Passkeys
 
-![bg opacity:.1](img/fido2.jpg)
+## Der Passwort-Nachfolger
+
+---
+<!-- class: biglist -->
 # Passkeys - Konzept
 
 **Definition:** Ein kryptografischer Berechtigungsnachweis basierend auf FIDO-Standards.   
@@ -468,12 +488,10 @@ Die EU-Richtlinie **PSD2** hat das Ende für unsichere Verfahren besiegelt:
 
 **Grundprinzip:** Asymmetrische Kryptografie. Der Server kennt nur einen öffentlichen Schlüssel; das Geheimnis (privater Schlüssel) verlässt niemals das Endgerät.   
 
-
 ---
 
-![bg opacity:.1](img/fido2.jpg)
 # Passkeys - Konzept
-
+<!-- _class: normal -->
 Ein Passkey besteht aus zwei Teilen:
 1. **Öffentlicher Schlüssel:**
     - Wird auf der Website oder beim Dienst gespeichert.
@@ -485,41 +503,41 @@ Ein Passkey besteht aus zwei Teilen:
 Es gibt kein Geheimnis (wie ein Passwort), das gestohlen oder erraten werden kann.
 
 ---
+<!-- class: biglist -->
 
-![bg opacity:.1](img/fido2.jpg)
 # Passkeys - Die FIDO2-Architektur
 
-WebAuthn (W3C API): Standardisierte Schnittstelle im Browser/Betriebssystem zur Kommunikation mit Webdiensten.
+### WebAuthn (W3C API): Standardisierte Schnittstelle im Browser/Betriebssystem zur Kommunikation mit Webdiensten.
 
-CTAP2 (Protocol): Protokoll für die Kommunikation zwischen dem Client (PC/Laptop) und externen Authentikatoren (Smartphone, YubiKey).   
+### CTAP2 (Protocol): Protokoll für die Kommunikation zwischen dem Client (PC/Laptop) und externen Authentikatoren (Smartphone, YubiKey).   
 
-Zusammenhang: FIDO2 = WebAuthn + CTAP2.
+## Zusammenhang: FIDO2 = WebAuthn + CTAP2.
 
 ---
+<!-- _class: normal -->
 
-![bg opacity:.1](img/fido2.jpg)
 # Passkeys - Funktionsweise: Challenge-Response-Verfahren
 
-1. Registrierung: Gerät erzeugt Schlüsselpaar; öffentlicher Schlüssel geht an den Server.
-2. Login-Anfrage: Server sendet eine zufällige "Challenge" (Herausforderung).
-3. Lokale Verifizierung: Nutzer entsperrt Gerät (z. B. FaceID/Fingerabdruck). Erst dann wird der private Schlüssel freigegeben.   
-4. Signatur: Das Gerät signiert die Challenge kryptografisch und sendet nur die Signatur zurück.
-5. Validierung: Server prüft Signatur mit dem öffentlichen Schlüssel – Login erfolgt.
+1. **Registrierung:** Gerät erzeugt Schlüsselpaar; öffentlicher Schlüssel geht an den Server.
+2. **Login-Anfrage:** Server sendet eine zufällige "Challenge" (Herausforderung).
+3. **Lokale Verifizierung:** Nutzer entsperrt Gerät (z. B. FaceID/Fingerabdruck). Erst dann wird der private Schlüssel freigegeben.   
+4. **Signatur:** Das Gerät signiert die Challenge kryptografisch und sendet nur die Signatur zurück.
+5. **Validierung:** Server prüft Signatur mit dem öffentlichen Schlüssel – Login erfolgt.
 
 ---
+<!-- class: biglist -->
 
-![bg opacity:.1](img/fido2.jpg)
 # Phishing-Resistenz durch Origin Binding
 
-Domain-Koppelung: Jeder Passkey ist fest an eine spezifische Domain (Relying Party ID) gebunden.
+**Domain-Koppelung:** Jeder Passkey ist fest an eine spezifische Domain (Relying Party ID) gebunden.
 
-Browser-Kontrolle: Der Browser vergleicht die URL der Website mit der im Passkey gespeicherten Domain.   
+**Browser-Kontrolle:** Der Browser vergleicht die URL der Website mit der im Passkey gespeicherten Domain.   
 
-Kein Diebstahl möglich: Da der Nutzer kein Passwort eingibt, kann er nicht auf Fake-Seiten (Phishing) getäuscht werden.
+**Kein Diebstahl möglich:** Da der Nutzer kein Passwort eingibt, kann er nicht auf Fake-Seiten (Phishing) getäuscht werden.
 
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # Passkey-Typen im Vergleich
 
 |  Eigenschaft | Synchronisierte Passkeys (Synced)  |Gerätegebundene Passkeys (Device-bound)   | 
@@ -530,22 +548,23 @@ Kein Diebstahl möglich: Da der Nutzer kein Passwort eingibt, kann er nicht auf 
 | Zielgruppe | Consumer / Alltag  | Enterprise / Hochrisiko-Konten  |
 ---
 
-![bg opacity:.1](img/fido2.jpg)
+
 # Nachteile von Passkeys
 
-- ## Kontowiederherstellung (Account Recovery)
+## Kontowiederherstellung (Account Recovery)
 
-- ## Interoperabilität und Vendor Lock-in
+## Interoperabilität und Vendor Lock-in
 
 ---
 
-![bg opacity:.1](img/access.jpg)
+<!-- _class: chapter -->
+
 # Autorisierung
 
 ## Was dürfen sie?
 
 ---
-![bg opacity:.1](img/access.jpg)
+<!-- _class: normal -->
 # Principle of Least Privilege (PoLP)
 
 Das Fundament jeder sicheren Architektur.
@@ -558,10 +577,8 @@ Das Fundament jeder sicheren Architektur.
     - Schutz gegen Fehlkonfigurationen.
 
 ---
-![bg opacity:.1](img/access.jpg)
-# Die Access Control Matrix (ACM)
 
-Das theoretische Modell hinter allen Berechtigungen.
+# Die Access Control Matrix (ACM) - Das Modell
 
 Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und **Objekten** (Dateien, Drucker, APIs).
 
@@ -570,15 +587,15 @@ Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und
 | **User 1** | RW | - | P |
 | **User 2** | R | RW | - |
 
-- **Implementationen:**
-    - **ACLs (Access Control Lists):** Spaltenweise Speicherung (beim Objekt).
-    - **Capability Lists:** Zeilenweise Speicherung (beim Subjekt).
+
+- **ACLs (Access Control Lists):** Spaltenweise Speicherung (beim Objekt).
+- **Capability Lists:** Zeilenweise Speicherung (beim Subjekt).
 
 ---
-![bg opacity:.1](img/access.jpg)
-# Discretionary Access Control (DAC)
 
-"Ermessensabhängige Zugriffskontrolle"
+# Discretionary Access Control (DAC)
+<!-- class: normal -->
+## Ermessensabhängige Zugriffskontrolle
 
 - **Konzept:** Der **Eigentümer** eines Objekts entscheidet selbst, wer darauf zugreifen darf.
 - **Praxisbeispiel: Linux Filesystem**
@@ -588,10 +605,10 @@ Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und
 - **Nachteil:** Hohes Risiko durch Fehlkonfiguration; Trojaner erben alle Rechte des Nutzers.
 
 ---
-![bg opacity:.1](img/access.jpg)
+
 # Mandatory Access Control (MAC)
 
-"Zwingende Zugriffskontrolle"
+## Zwingende Zugriffskontrolle
 
 - **Konzept:** Zugriff wird durch ein zentrales System (Sicherheitspolicy) erzwungen. Nutzer können Rechte **nicht** eigenmächtig weitergeben.
 - **Labeling:** Subjekte haben ein *Clearance Level*, Objekte haben ein *Classification Level*.
@@ -601,10 +618,10 @@ Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und
 - **Nachteil:** Sehr hoher administrativer Aufwand, unflexibel.
 
 ---
-![bg opacity:.1](img/access.jpg)
+
 # Role-Based Access Control (RBAC)
 
-"Rollenbasierte Zugriffskontrolle"
+## Rollenbasierte Zugriffskontrolle
 
 - **Konzept:** Rechte werden nicht direkt an Nutzer, sondern an **Rollen** gebunden. Nutzer werden Mitglied einer Rolle.
 - **Abstraktion:** Subjekt $\rightarrow$ Rolle $\rightarrow$ Permission.
@@ -613,21 +630,21 @@ Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und
 - **Nachteil:** "Role Explosion" (zu viele spezifische Rollen machen das System unübersichtlich).
 
 ---
-![bg opacity:.1](img/access.jpg)
+
 # Attribute-Based Access Control (ABAC)
 
-"Attributbasierte Zugriffskontrolle"
+## Attributbasierte Zugriffskontrolle
 
 - **Konzept:** Zugriff basierend auf einer logischen Kombination von Attributen:
-    * **Subject:** Alter, Abteilung, Sicherheitsfreigabe.
-    * **Resource:** Dateityp, Erstellungsdatum, Projektbezug.
-    * **Environment:** Uhrzeit, IP-Adresse, Standort.
+    - **Subject:** Alter, Abteilung, Sicherheitsfreigabe.
+    - **Resource:** Dateityp, Erstellungsdatum, Projektbezug.
+    - **Environment:** Uhrzeit, IP-Adresse, Standort.
 - **Logik:** `IF (Subject.Dept == 'Dev' AND Env.Time < '18:00') THEN Allow Access`.
 - **Vorteil:** Extrem feingranular (Next Generation Access Control).
 - **Nachteil:** Hohe Komplexität in der Regeldefinition und Performance-Impact durch Policy-Evaluation.
 
 ---
-![bg opacity:.1](img/access.jpg)
+
 # Vergleich der Verfahren
 
 | Verfahren | Flexibilität | Sicherheit | Admin-Aufwand | Hauptanwendungsgebiet |
@@ -638,10 +655,10 @@ Die ACM beschreibt die Beziehung zwischen **Subjekten** (Benutzer, Prozesse) und
 | **ABAC** | Sehr hoch | Hoch | Hoch | Cloud-Infrastruktur, Dynamische APIs |
 
 ---
-![bg opacity:.1](img/access.jpg)
+
 # Zusammenfassung & Entscheidungshilfe
 
-Wann setzt man was ein?
+
 
 1.  **DAC:** Wenn Nutzer volle Kontrolle über ihre eigenen Daten benötigen (Standardfall).
 2.  **MAC:** Wenn das System vor gezielten Angriffen und Malware geschützt werden muss (Hardening).
@@ -651,26 +668,90 @@ Wann setzt man was ein?
 > **Merksatz:** In modernen Systemen findet man oft Mischformen (z.B. RBAC für die Grundstruktur und ABAC für die Feinsteuerung).
 
 ---
-![bg opacity:.1](img/access.jpg)
+
+# Privileged Access Management (PAM)
+
+Besondere Regeln für "Superuser" (Admins), um das **Principle of Least Privilege (PoLP)** konsequent umzusetzen:
+
+- **Vaulting:** Passwörter für Admins sind in einem Tresor gespeichert und werden regelmäßig rotiert.
+- **Just-in-Time (JIT) Access:** Admin-Rechte werden nur für ein kurzes Zeitfenster (z. B. 2 Stunden) vergeben und danach automatisch entzogen.
+- **Session Recording:** Kritische Sitzungen auf Servern werden aufgezeichnet, um Änderungen nachvollziehbar zu machen (Compliance).
+
+
+---
+
+# Verzeichnisdienste (Directory Services)
+
+Ein Verzeichnisdienst ist eine zentrale Software-Infrastruktur, die Informationen über Objekte in einem Netzwerk speichert und für Benutzer sowie Anwendungen verfügbar macht.
+
+- **Zentralisierung:** Alle Identitäten (Benutzer, Computer, Drucker, Gruppen) werden an einem Ort verwaltet.
+- **Hierarchie:** Daten sind meist in einer Baumstruktur (DIT - Directory Information Tree) organisiert.
+- **Leseoptimiert:** Verzeichnisdienste sind für schnelles Suchen und Lesen optimiert, weniger für häufige Schreibvorgänge (im Gegensatz zu relationalen DBs).
+- **Standard-Protokoll:** **LDAP** (Lightweight Directory Access Protocol).
+
+---
+
+# LDAP: Der Standard hinter den Kulissen
+
+LDAP ist das Kommunikationsprotokoll, mit dem Clients Informationen vom Verzeichnisdienst abfragen.
+
+- **Struktur:** Objekte werden über einen **Distinguished Name (DN)** eindeutig identifiziert.
+  - Beispiel: `CN=Max Mustermann,OU=Vertrieb,DC=firma,DC=de`
+- **Attribute:** Jedes Objekt hat spezifische Eigenschaften (z. B. `mail`, `uid`, `memberOf`).
+- **Authentifizierung:** Unterstützt Mechanismen wie "Simple Bind" (User/Passwort) oder "SASL" (z. B. via Kerberos).
+
+---
+
+# Microsoft Active Directory (AD)
+
+Active Directory ist der am weitesten verbreitete Verzeichnisdienst im Enterprise-Umfeld.
+
+**Die logische Struktur:**
+1. **Forest (Gesamtstruktur):** Die oberste Sicherheitsgrenze.
+2. **Tree (Domänenstruktur):** Eine Sammlung von Domänen mit gemeinsamem Namensraum.
+3. **Domain:** Eine administrative Grenze für Benutzer und Richtlinien.
+4. **Organizational Unit (OU):** Container innerhalb einer Domäne zur logischen Gruppierung und Delegation von Rechten.
+
+---
+
+# AD als Basis für RBAC
+
+Active Directory bildet das Fundament für die im IAM genannte **rollenbasierte Zugriffskontrolle (RBAC)**:
+
+- **Gruppen:** Benutzer werden in Sicherheitsgruppen (Security Groups) zusammengefasst.
+- **Verschachtelung:** "User -> Globale Gruppe (Rolle) -> Lokale Gruppe (Berechtigung) -> Ressource" (AGDLP-Prinzip).
+- **Group Policy Objects (GPO):** Ermöglichen die zentrale Durchsetzung von Sicherheitsrichtlinien (z. B. Passwortkomplexität oder Softwareverteilung) auf allen verknüpften Systemen.
+
+---
+
+# Integration: AD im modernen IAM
+
+Wie passt das klassische AD in die Cloud-Welt (SSO / OIDC)?
+
+- **Identity Store:** Das lokale AD dient oft als primäre "Source of Truth" für Identitäten.
+- **Hybrid-Setup:** Synchronisation lokaler Identitäten in die Cloud (z. B. via *Microsoft Entra Connect* in das Entra ID / ehemals Azure AD).
+- **Federation:** Dienste wie ADFS (Active Directory Federation Services) ermöglichen SSO für Web-Anwendungen, indem sie AD-Identitäten in SAML- oder OIDC-Tokens übersetzen.
+---
+
 # Exkurs: Autorisierung in SAP S/4HANA
 
 - **Primäres Modell:** **RBAC** über den Profilgenerator (`PFCG`).
-    * *Struktur:* User $\rightarrow$ Rolle $\rightarrow$ Profil $\rightarrow$ Objekt $\rightarrow$ Feld/Wert.
+    - '*Struktur:** User $\rightarrow$ Rolle $\rightarrow$ Profil $\rightarrow$ Objekt $\rightarrow$ Feld/Wert.
 - **Das "Berechtigungsobjekt":** Das Herzstück.
-    * Beispiel: `S_TCODE` (Prüft den Transaktionscode).
-    * Beispiel: `M_MATE_WRK` (Prüft den Zugriff auf Materialdaten pro Werk).
+    - Beispiel: `S_TCODE` (Prüft den Transaktionscode).
+    - Beispiel: `M_MATE_WRK` (Prüft den Zugriff auf Materialdaten pro Werk).
 - **Moderner Shift (ABAC-Ansätze):**
-    * **CDS Access Controls (DCL):** Daten-Filtering direkt beim SQL-Select basierend auf Benutzerattributen.
-    * **Context-Awareness:** Nutzung von Umgebungsvariablen (IP, Zeit) für besonders sensible Felder (UI Masking).
+    - **CDS Access Controls (DCL):** Daten-Filtering direkt beim SQL-Select basierend auf Benutzerattributen.
+    - **Context-Awareness:** Nutzung von Umgebungsvariablen (IP, Zeit) für besonders sensible Felder (UI Masking).
 
 ---
+<!-- _class: chapter -->
 
-![bg opacity:.1](img/sso.jpg)
 # Single Sign-On (SSO) & Verbundidentität
-### Kernkonzepte, OAuth 2.0 und OpenID Connect
+## Kernkonzepte, OAuth 2.0 und OpenID Connect
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # Warum brauchen wir SSO?
 **Das Problem der Identitäts-Fragmentierung:**
 
@@ -683,7 +764,7 @@ Wann setzt man was ein?
 Ein zentraler **Identity Provider (IdP)** übernimmt die Authentifizierung für alle angebundenen **Service Provider (SP)**.
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # Grundkonzepte von SSO
 
 SSO basiert auf dem Aufbau einer **Vertrauensstellung (Trust)** zwischen zwei Parteien:
@@ -695,7 +776,7 @@ SSO basiert auf dem Aufbau einer **Vertrauensstellung (Trust)** zwischen zwei Pa
 **Kernvorteil:** Die Anwendung (SP) sieht niemals das Passwort des Nutzers. Sie erhält lediglich eine digital signierte Bestätigung (Token/Assertion).
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # OAuth 2.0: Das Framework für Autorisierung
 
 > **Wichtig:** OAuth 2.0 ist primär ein **Autorisierungs-Protokoll**, kein Authentifizierungs-Protokoll!
@@ -706,7 +787,7 @@ SSO basiert auf dem Aufbau einer **Vertrauensstellung (Trust)** zwischen zwei Pa
 
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # OAuth 2.0 Authorization Code Flow
 Der gängigste Flow für Web-Anwendungen:
 
@@ -718,7 +799,7 @@ Der gängigste Flow für Web-Anwendungen:
 6.  **Client** nutzt das Access Token, um Daten vom **Resource Server** abzurufen.
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # OpenID Connect (OIDC): Die Identitätsschicht
 
 Da OAuth 2.0 nur für Autorisierung gedacht war ("Darf ich auf dein Profil zugreifen?"), wurde **OpenID Connect** darauf aufgesetzt, um Authentifizierung zu ermöglichen ("Wer bist du?").
@@ -734,7 +815,7 @@ Da OAuth 2.0 nur für Autorisierung gedacht war ("Darf ich auf dein Profil zugre
 | Datenformat | Beliebig (oft JSON) | Immer JWT |
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # JSON Web Tokens (JWT) in SSO
 Ein JWT besteht aus drei Teilen:
 1.  **Header:** Algorithmus (z. B. RS256).
@@ -744,7 +825,7 @@ Ein JWT besteht aus drei Teilen:
 $$\text{JWT} = \text{base64}(Header) . \text{base64}(Payload) . \text{Signature}$$
 
 ---
-![bg opacity:.1](img/sso.jpg)
+
 # SSO Anbieter im Web
 
 ### Cloud / SaaS (B2C & B2B)
@@ -758,9 +839,9 @@ $$\text{JWT} = \text{base64}(Header) . \text{base64}(Payload) . \text{Signature}
 - **Authentik / Authelia:** Moderne, leichtgewichtige Alternativen.
 
 ---
-![bg opacity:.1](img/sso.jpg)
-# Zusammenfassung
 
+# Zusammenfassung
+<!-- _class: biglist -->
 - **SSO** reduziert Passwort-Risiken und verbessert die UX.
 - **OAuth 2.0** ist das Fundament für delegierte Autorisierung.
 - **OpenID Connect** nutzt dieses Fundament für die Benutzer-Authentifizierung via JWT.
